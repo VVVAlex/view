@@ -4,14 +4,13 @@
 /dist
 /dist_bso
 /ico
-/view_200/.venv
+*/.venv
 /.vscode
 /__pycache__
 /arch
 /build
 /build_bso
 Pipfile
-/view_200/.idea
 
 /.idea/modules.xml
 /.idea/inspectionProfiles/profiles_settings.xml
