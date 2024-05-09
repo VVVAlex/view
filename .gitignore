@@ -12,3 +12,8 @@
 /build_bso
 Pipfile
 /view_200/.idea
+
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+*/.idea
