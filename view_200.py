@@ -29,8 +29,6 @@ from pdf import Pdf
 from stbar import Footer
 from title import TitleTop
 
-# from pathlib import Path
-
 Width = 1240  # 1340
 Height = 760
 # ctk.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
