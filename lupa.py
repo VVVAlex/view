@@ -10,7 +10,8 @@ class Lupa(tk.Toplevel):
     """Лупа для увеличения"""
 
     def __init__(self, parent=None):  # 'beige' 'gray22' color=' beige',
-        tk.Toplevel.__init__(self, parent)
+        super().__init__(parent)
+        # tk.Toplevel.__init__(self, parent)
         # self.wm_overrideredirect(True)
         self.overrideredirect(True)
         # self.overrideredirect(False)                   # можно update()

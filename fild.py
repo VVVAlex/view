@@ -84,7 +84,7 @@ class Fild(ctk.CTkFrame):
         )  # beige
         self.canvw.config(highlightthickness=0, takefocus=1)
         self.pop_up(self.canvw)
-        self.L = Lupa(self.parent)
+        # self.L = Lupa(self.parent)
 
     def pop_up(self, frame) -> None:
         pp = CTkPopupMenu(frame, width=160)
@@ -126,8 +126,9 @@ class Fild(ctk.CTkFrame):
         self.canvw.pack(fill="both", expand=True)
         # self.frame_canv.pack(fill="both", expand=True)
         # self.frame_canv.grid(row=0, column=0, sticky="nsew")
-        # self.L = Lupa(self.parent)
+        self.L = Lupa(self.parent)
         self.L.withdraw()
+
         if self.data_full:
             self.n_screen = self.get_maxscreen()  # число экранов
             self.data = self.data_full[:self.W]
@@ -600,6 +601,7 @@ class Fild(ctk.CTkFrame):
         self.bind_lupa()
         data = self.calk_data_lupa(event.x, event.y)
         if data:
+            # self.L.deiconify()
             self.L.lenth = True if self.flag_on_lentht else False
             # geom = self.parent.get_geometry_root()
             geom = self.canvw.winfo_rootx(), self.canvw.winfo_rooty()
