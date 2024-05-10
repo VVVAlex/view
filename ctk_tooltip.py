@@ -163,7 +163,8 @@ class CTkToolTip(Toplevel):
         Hides the ToolTip temporarily.
         """
 
-        if self.disable: return
+        if self.disable:
+            return
         self.status = "outside"
         self.withdraw()
 
@@ -205,8 +206,10 @@ class CTkToolTip(Toplevel):
         """
         Set new message or configure the label parameters.
         """
-        if delay: self.delay = delay
-        if bg_color: self.frame.configure(fg_color=bg_color)
+        if delay:
+            self.delay = delay
+        if bg_color:
+            self.frame.configure(fg_color=bg_color)
 
         self.messageVar.set(message)
         self.message_label.configure(**kwargs)
