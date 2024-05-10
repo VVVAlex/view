@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 import csv
 import hashlib
 import io
@@ -8,15 +7,12 @@ import pathlib
 import shutil
 import time
 import tkinter as tk
-# import tkinter.messagebox as box
 from ctkmessagebox import CTkMessagebox as Box
 from collections import namedtuple
 from tkinter import ttk
 from tkinter.filedialog import askopenfilename
-
 import customtkinter as ctk
 from tkinterdnd2 import DND_FILES, TkinterDnD  # ,DND_ALL
-
 from btn import Btn
 from common import Row, bakdir, load_image
 from ctk_tooltip import CTkToolTip as ToolTip
@@ -36,7 +32,7 @@ ctk.set_default_color_theme("dark-blue")  # Themes: "blue"
 
 
 class RightFrame(ctk.CTkFrame):
-    """"""
+    """Правый фрейм"""
 
     def __init__(self, root, **kwargs):
         super().__init__(root, corner_radius=0,  # fg_color=('#c0c2c5', '#343638'),
@@ -131,7 +127,7 @@ class App(ctk.CTk, TkinterDnD.DnDWrapper):
         self.drop_target_register(DND_FILES)  # DND_ALL
         self.dnd_bind("<<Drop>>", self.open_log_drop)
 
-    def open_log_drop(self, event):
+    def open_log_drop(self, event) -> None:
         """Открытие лога перетаскиванием"""
         # print(event.data)
         self.filename = event.data[:]
@@ -238,7 +234,7 @@ class App(ctk.CTk, TkinterDnD.DnDWrapper):
                 timdata = time.strptime(
                     line_dict["timdata"], "%d.%m.%y %H:%M:%S"
                 )  # объект time
-            except Exception:
+            except (ValueError, KeyError):
                 timdata = ""
             try:
                 all_data = [
@@ -283,7 +279,7 @@ class App(ctk.CTk, TkinterDnD.DnDWrapper):
             out.close()
         return data
 
-    def open_log(self, arg=None):
+    def open_log(self, arg=None) -> None:
         """Открыть файл лога"""
         self.filename = self.open_file(self.dir)
         if self.filename:
@@ -408,7 +404,7 @@ class App(ctk.CTk, TkinterDnD.DnDWrapper):
         self.bind("<Control-z>", self._full_scr)
         # self.bind("<Escape>", self._clr)
 
-    def _full_scr(self, arg=None):
+    def _full_scr(self, arg=None) -> None:
         """Развернуть на весь экран"""
         self.state("zoomed") if self.wm_state else self.state("normal")
         self.attributes("-fullscreen", self.wm_state)

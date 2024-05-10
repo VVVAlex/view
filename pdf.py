@@ -233,7 +233,7 @@ class Pdf:
             # cur_path = pathlib.Path('temp.pdf')
             # name = cur_path.joinpath(bakdir, cur_path)
             os.startfile(f'{self.tmp_name}', command)
-        except:
+        except (FileNotFoundError, NameError):
             pass
 
     # def go2(self, verbose):
