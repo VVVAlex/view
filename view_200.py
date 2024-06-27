@@ -115,7 +115,7 @@ class App(ctk.CTk, TkinterDnD.DnDWrapper):
         self.head.grid_columnconfigure((0, 1, 2, 3, 4), weight=1)
         self.st_bar.grid(row=2, column=0, columnspan=2, sticky="we")
         self.st_bar.grid_columnconfigure(0, weight=1)
-        self.board.grid(row=1, column=0, sticky="nsew", padx=(2, 0), pady=1)
+        self.board.grid(row=1, column=0, sticky="nsew", padx=(2, 0), pady=0)
         # self.board.grid_rowconfigure(0, weight=1)  # minsize=80
         # self.board.grid_columnconfigure(0, weight=1)
 

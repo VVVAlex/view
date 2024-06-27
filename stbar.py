@@ -32,7 +32,7 @@ class Footer(ctk.CTkFrame):
                                 dark_image=Image.open(path_d),
                                 size=(20, 20))
         ctk.CTkLabel(self, textvariable=self.file_info,
-                     image=my_image, compound=tk.LEFT, font=font_).pack(side=tk.LEFT, fill=tk.X)
+                     image=my_image, compound=tk.LEFT, font=font_, padx=10).pack(side=tk.LEFT, fill=tk.X)
 
         # ctk.CTkLabel(self, textvariable=self.file_info,
         #              image=self.im_tel.open, compound=tk.LEFT, font=font_,
